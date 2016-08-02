@@ -4,8 +4,7 @@ public:
     // Initialize your data structure here.
     TrieNode() {
         is_key = false;
-        // memset(children, NULL, 26);
-        // NOT fucking work!!
+        // memset(children, NULL, sizeof children);
         for (int i = 0; i < 26; i++) {
             children[i] = NULL;
         }
