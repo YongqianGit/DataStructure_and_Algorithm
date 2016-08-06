@@ -16,7 +16,7 @@ int threeSumClosest(vector<int>& nums, int target) {
                 int sum = nums[i] + nums[l] + nums[r];
                 if (sum == target) {return target;}
                 
-                if ( abs(min_diff) > abs(sum - target) ) {min_diff = sum - target;}
+                if (abs(static_cast<long long>(min_diff)) > abs(static_cast<long long>(sum - target) ) ) {min_diff = sum - target;}
                 
                 if (target > sum) {l++;}
                 else {r--;}

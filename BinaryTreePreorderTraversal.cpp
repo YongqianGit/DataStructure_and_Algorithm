@@ -1,5 +1,5 @@
 vector<int> preorderTraversal(TreeNode* root) {
-        if (!root) return {};
+        if (!root) return {vector<int> ();};
         stack<TreeNode*> stat;
         stat.push(root);
         vector<int> res;

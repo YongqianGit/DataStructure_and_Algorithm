@@ -1,6 +1,5 @@
-class MinStack {
 private:
-    stack<int> val, min_val;
+    stack<int> sk, sk_min;
 public:
     /** initialize your data structure here. */
     MinStack() {
@@ -8,9 +7,25 @@ public:
     }
     
     void push(int x) {
-        val.push(x);
-        if (min_val.empty() || x <= min_val.top() ) {
-       return min_val.top();
+        if ( sk_min.empty() || x <= sk_min.top() ) {
+            sk_min.push(x);
+        }
+        sk.push(x);
+    }
+    
+    void pop() {
+        if (sk.top() == sk_min.top() ) {
+            sk_min.pop();
+        }
+        sk.pop();
+    }
+    
+    int top() {
+        return sk.top();
+    }
+    
+    int getMin() {
+        return sk_min.top();
     }
 };
 

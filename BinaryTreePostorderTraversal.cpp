@@ -1,11 +1,20 @@
+void postorder(TreeNode *root, vector<int>& res) {
+        if (root) {
+            postorder(root->left, res);
+            postorder(root->right, res);
+            res.push_back(root->val);
+        }
+    }
+
+
 vector<int> postorderTraversal0(TreeNode* root) {
         vector<int> res;
         postorder(root, res);
         return res;
     }
     
-    // Non-recurse
-    vector<int> postorderTraversal(TreeNode* root) {
+// Non-recurse
+vector<int> postorderTraversal(TreeNode* root) {
         stack<TreeNode*> node;
         vector<int> res;
         TreeNode *last = NULL;
@@ -31,10 +40,3 @@ vector<int> postorderTraversal0(TreeNode* root) {
         return res;
     }
 
-void postorder(TreeNode *root, vector<int>& res) {
-        if (root) {
-            postorder(root->left, res);
-            postorder(root->right, res);
-            res.push_back(root->val);
-        }
-    }
